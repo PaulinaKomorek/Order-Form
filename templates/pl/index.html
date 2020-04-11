@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icon.png') }}">
+    <title>Formularz zamówienia</title>
+</head>
+
+<body>
+    <div class="container pt-4">
+        <form action="/en" method="get">
+            <button type="submit" class="btn btn-link float-right"><img
+                    src="{{ url_for('static', filename='EN.png') }}"></img></button>
+        </form>
+        <div class="row">
+            <div class="col-3">
+            </div>
+            <div class="col-6">
+                <br>
+                <h1 class="text-center"> Formularz zamówienia </h1>
+                <br>
+                <br>
+                <form action="/pl/place_order" method="get">
+                    <div class="form-group">
+                        <label for="name">Imię i nazwisko:</label>
+                        <input type="text" class="form-control" name="name" id="name"
+                            placeholder="Proszę wpisać imię i nazwisko">
+                    </div>
+                    <div class="form-group">
+                        <label for="email_address">Adres e-mail:</label>
+                        <input type="email" class="form-control" name="e-mail" id="e-mail"
+                            placeholder="Proszę wpisać adres e-mial">
+                        <small id="emailHelp" class="form-text text-muted"> Twój adres e-mail nie zostanie nikomu
+                            udostępniony.</small>
+                        <div class="form-group">
+                            <label for="telephone_number">Numer telefonu:</label>
+                            <input type="text" class="form-control" name="telephone" id="telephone"
+                                placeholder="Proszę wpisać numer telefonu w formacie: XXXXXXXXX">
+                            <small id="telephone" class="form-text text-muted"> Twój numer telefonu zostanie przekazany
+                                firmie kurierskiej.
+                            </small>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Adres:</label>
+                            <input type="text" class="form-control" name="address" id="address"
+                                aria-describedby="address_to_send" placeholder="Proszę wpisać adres wysyłki">
+                        </div>
+                        <div class="form-group">
+                            <label for="post_code">Kod pocztowy:</label>
+                            <input type="post_code" class="form-control" name="postcode" id="post_code"
+                                placeholder="Proszę wpisać kod pocztowy w formacie: XX/XXX">
+                        </div>
+                        <button type="submit" class="btn btn-info">Wyśij</button>
+                </form>
+                <p class="text-danger mt-4">{{warning}}</p>
+            </div>
+            <div class="col-3">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
